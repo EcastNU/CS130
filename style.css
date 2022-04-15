@@ -1,21 +1,66 @@
-/* You're welcome to change any of this! */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&display=swap');
+
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0px;
-    font-family: Arial, sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 header, section {
-    padding: 20px;
+    padding: 10px;
 }
 p, li {
     line-height: 1.5em;
+    margin: 0px 10px;
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#tutorials {
+    background-color: #89CFF0;
+}
+#homework {
+    background-color: #D3D3D3;
+}
 #inspiration {
-    background-color: #F0F0F0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    background-color: #89CFF0;
+}
+img {
+    max-width: 50%;
+    max-height: 50%;
+   }
+
+section {
+    min-height: 100vh;
+}
+
+h2 {
+    margin: 0px;
+    height: 110px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.fa-solid {
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1000px){
+    main {
+        grid-template-columns: 1fr;
+    }
+    section {
+        height: auto;
+        min-height: 40vh;
+    }
+
+    h2 {
+        background: none;
+    }
 }
