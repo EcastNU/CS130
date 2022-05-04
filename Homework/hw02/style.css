@@ -163,4 +163,46 @@ section{
 
 }
 
+#upgrade:hover{
+    background-color:#333;
+}
+#profile:hover{
+    background-color: #444;
+}
+
+#sd:hover{
+    font-weight: 800;
+}
+#bottom:hover{
+    border-bottom: solid 2px #1DB954;
+    font-weight: 800;
+}
+
+
+button{
+    width: 25px;
+	height: 25px;
+	border-radius: 50%;
+    background-color: #1DB954;
+}
+#play{
+    color: white;
+    float: right;
+    
+}
+
+button{
+    display: none;
+}
+
+section:hover button{
+    display: block;
+
+}
+
+#control{
+    display: block;
+}
+
+
 
