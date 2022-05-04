@@ -139,6 +139,10 @@ section{
   font-size: small;
 }
 
+#BottomImage{
+    width: 75px;
+    height: 75px;
+}
 
 /**************************/
 /* Part D: Responsive UIs */
