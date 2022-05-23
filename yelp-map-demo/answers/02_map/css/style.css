@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+}
+
+#mapid { 
+    height: 50vh;
+    width: 50vw; 
+    border: solid 1px #000;
+}

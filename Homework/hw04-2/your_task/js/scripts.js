@@ -21,22 +21,18 @@ const getTracks = (term) => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        if (data.length > 0) {
-          let firstFive = data.splice(0, 5);
-  
-          console.log(firstFive[0]);
-  
-          //   covnvert to html
-          let html = firstFive.map(track2Html);
-  
-          //  plug it back to the index.html file
-          document.querySelector("#tracks").innerHTML = html;
-        } else {
-          let html = "<p>No tracks found that match your search criteria. </p>";
-          document.querySelector("#tracks").innerHTML = html;
-        }
-      });
-  };
+          if (data.length > 0) {
+            document.querySelector("#tracks").innerHTML= "";
+            let firstFive = data.slice(0, 5)
+            for (track of firstFive) 
+              {document.querySelector("#tracks").innerHTML += track2Html(track);}
+            } 
+            else {
+              let html = "<p>No tracks found that match your search criteria.</p>";
+              document.querySelector("#tracks").innerHTML = html;
+            }
+          });
+      };
   
   const track2Html = (track) => {
     return `
@@ -44,23 +40,51 @@ const getTracks = (term) => {
               <img src=${track.album.image_url}>
               <i class="fas play-track fa-play" aria-hidden="true"></i>
               <div class="label">
-                  <h2>${track.album.name}</h2>
-                  <p>
-                   ${track.artist.name}
-                  </p>
+                  <h2>${track.name}</h2>
+                  <p>${track.artist.name}</p>
               </div>
       </button>
       `;
   };
   
-  getTracks("Bad Bunny");
+getTracks("Bad Bunny");
 
-const getAlbums = (term) => {
-    console.log(`
-        get albums from spotify based on the search term
-        "${term}" and load them into the #albums section 
-        of the DOM...`);
-};
+  const getAlbums = (term) => {
+    let url = `https://www.apitutor.org/spotify/simple/v1/search?type=album&q=${term}`;
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+          if (data.length > 0) {
+            document.querySelector("#albums").innerHTML="";
+            let allalbums = data.slice(0, data.length)
+            for (album of allalbums) 
+              {document.querySelector("#albums").innerHTML += albums2Html(album);}
+            } 
+            else {
+              let html = "<p>No albums were returned.</p>";
+              document.querySelector("#albums").innerHTML = html;
+            }
+          });
+      };
+  
+  const albums2Html = (album) => {
+      return `
+        <section class="album-card" id=${album.id}>
+          <div>
+            <img src=${album.image_url}>
+            <h2>${album.name}</h2>
+            <div class="footer">
+                <a href=${album.spotify_url} target="_blank">
+                    view on spotify
+                </a>
+            </div>
+          </div>
+        </section>
+          `;
+      };
+  getAlbums("Bad Bunny");
+
+
 const getArtist = (term) => {
     let url = `https://www.apitutor.org/spotify/simple/v1/search?type=artist&q=${term}`;
   
@@ -101,8 +125,11 @@ const getArtist = (term) => {
   getArtist("Bad Bunny");
 
 const handleTrackClick = (ev) => {
-    const previewUrl = ev.currentTarget.getAttribute('data-preview-track');
+    const previewUrl = ev.currentTarget.getAttribute(`data-preview-track`);
     console.log(previewUrl);
+    audioPlayer.setAudioFile(previewUrl)
+    audioPlayer.play(previewUrl);
+    document.querySelector("footer .track-item").innerHTML = ev.currentTarget.innerHTML;
 }
 
 document.querySelector('#search').onkeyup = (ev) => {
