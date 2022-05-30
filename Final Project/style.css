@@ -1,0 +1,72 @@
+body{
+  background-image: url(https://static.vecteezy.com/system/resources/previews/002/094/486/large_2x/defocused-coffee-shop-and-restaurant-background-free-photo.jpg);
+  background-size: cover;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+#heading{
+    background-color: #c41200;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align:center;
+  }
+  
+  li {
+    float: center;
+  }
+  
+  li a{
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    font-weight:bold;
+    font-size: 30px;
+  }
+
+#YelpImage{
+    width: 100px;
+    height: 100px;
+}
+#categorycontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+#filtercontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+#search{
+  margin-top: 50px;
+}
+#locationbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#searchbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+label{
+  font-size: 30px;
+  color: black;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+h1{
+  text-align: center;
+  color: black;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
