@@ -1,6 +1,6 @@
 body{
   background-image: url(https://static.vecteezy.com/system/resources/previews/002/094/486/large_2x/defocused-coffee-shop-and-restaurant-background-free-photo.jpg);
-  background-size: cover;
+  background-size:auto;
 }
 
 .container {
@@ -47,9 +47,6 @@ ul {
   justify-content: center;
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }
-#search{
-  margin-top: 50px;
-}
 #locationbox{
   display: flex;
   align-items: center;
@@ -69,4 +66,35 @@ h1{
   text-align: center;
   color: black;
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+.restcard img{
+  height: 300px;
+  width: 350px;
+  margin-left: 25px;
+
+}
+.restcard{
+  display: flex; 
+  height: 400px;
+  width: 400px; 
+  border: 0px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  background-color: #c41200;
+  font-size: medium;
+  color: white;
+}
+h2{
+  text-align: center;
+}
+.restaurants{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+button{
+  margin-left: 650px;
 }

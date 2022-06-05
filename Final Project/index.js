@@ -1,4 +1,3 @@
-
 const showMatchingRestaurants = ev => {
     const location = document.querySelector('#location').value;
     const cuisine = document.querySelector('#cuisine').value;
@@ -10,15 +9,15 @@ const showMatchingRestaurants = ev => {
         .then(restaurants => {
             document.querySelector('.restaurants').innerHTML = '';
             for (const rest of restaurants) {
-                // 2 minutes:
-                // How do you output each restaurant name here:
-                // <div class="restaurants"></div>
                 console.log(rest.name);
                 document.querySelector('.restaurants').innerHTML += `
+                <section class="restcard"> 
                     <div>
-                        ${rest.name}<br>
+                        <h2>${rest.name}</h2>
                         <img src="${rest.image_url}" />
-                    </div>`;
+                    </div>
+                </section>
+                    `;
             }
         });
 };
